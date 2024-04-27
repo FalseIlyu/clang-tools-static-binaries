@@ -3,12 +3,13 @@ name: clang-tools-static-amd64
 on:
   push:
     branches: [ master ]
+  workflow_dispatch:
 
 jobs:
   build:
     strategy:
       matrix:
-        clang-version: [ 3.9, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12.0.1, 13, 14, 15, 16, 17, 18 ]
+        clang-version: [ 15, 16, 17, 18 ]
         os: [ linux, macosx, windows ]
         include:
           - clang-version: 3.9
